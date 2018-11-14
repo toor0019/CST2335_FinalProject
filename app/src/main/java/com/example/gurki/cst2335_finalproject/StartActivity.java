@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 
 public class StartActivity extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class StartActivity extends AppCompatActivity {
         m_Movie_Information=(Button)findViewById(R.id.movie_information);
         m_CBC_News_Reader=(Button)findViewById(R.id.cbc_news_reader);
         m_Food_Nutrition=(Button)findViewById(R.id.food_nutrition);
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         m_OC_Transpo.setOnClickListener(new View.OnClickListener() {

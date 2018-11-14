@@ -4,4 +4,6 @@
     <string name="cbc_news">CBC News Reader</string>
     <string name="food_nutrition">Food Nutrition Database</string>
     <string name="movie_information">Movie Information</string>
-</resources>
+    <string name="FNSearch"> Search Food</string>
+    <string name="FNtypeHint">Type to search food</string>
+    </resources>
