@@ -27,7 +27,7 @@ public class StartActivity extends AppCompatActivity {
         m_Food_Nutrition=(Button)findViewById(R.id.food_nutrition);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
+        setSupportActionBar(myToolbar);//
         m_OC_Transpo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
