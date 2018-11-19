@@ -5,5 +5,11 @@
     <string name="food_nutrition">Food Nutrition Database</string>
     <string name="movie_information">Movie Information</string>
     <string name="FNSearch"> Search Food</string>
-    <string name="FNtypeHint">Type to search food</string>
-    </resources>
+    <string name="FNInputText">Type to search food</string>
+    <string name="dialog_message">Are you sure?</string>
+    <string name="dialog_title">Exit</string>
+    <string name="ok">yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="FNgoBack">Go back</string>
+    <string name="FNPageText">A fruit on next page FINALLY!!!</string>
+</resources>

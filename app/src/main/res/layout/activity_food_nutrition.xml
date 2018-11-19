@@ -7,39 +7,48 @@
     android:orientation="vertical"
     tools:context="com.example.gurki.cst2335_finalproject.FoodNutritionActivity">
 
-<LinearLayout android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:orientation="horizontal">
-
-    <EditText
-        android:id="@+id/FNtypeHint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/FNtypeHint"
-        android:inputType="text"
-        android:singleLine="false"
-        android:layout_weight="1"/>
-    <Button
-        android:id="@+id/FNsearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/FNSearch" />
-</LinearLayout>
-
-    <ListView
-    android:id="@+id/FNListView"
-    android:padding="5dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentTop="true" />
-
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:id="@+id/ourProgressBar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:layout_centerHorizontal="true"/>
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/FNsearchEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/FNInputText"
+            android:inputType="text"
+            android:singleLine="false" />
+
+        <Button
+            android:id="@+id/FNsearchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/FNSearch" />
+    </LinearLayout>
+
+
+
+    <ListView
+        android:id="@+id/FNListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="5dp" />
+
+    <ProgressBar
+        android:id="@+id/ourProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+    <Button
+        android:id="@+id/FNgoBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/FNgoBack" />
 
 </LinearLayout>
