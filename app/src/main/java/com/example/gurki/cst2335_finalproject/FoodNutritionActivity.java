@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ public class FoodNutritionActivity extends AppCompatActivity {
     private Button mSearchButton, mGoBackButton;
     ProgressBar myProgressBar;
     ListView mListView;
+    private EditText mEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class FoodNutritionActivity extends AppCompatActivity {
         Log.i(ACTIVITY_NAME, "In onCreate()");
         myProgressBar = (ProgressBar) findViewById(R.id.ourProgressBar);
         mSearchButton = findViewById(R.id.FNsearchButton);
+        mEditText=(EditText) findViewById(R.id.FNsearchEditText);
 
         String fruits[] = {"Apple", "Banana", "Mango", "Grapes", "Strawberry"};
         mListView = (ListView) findViewById(R.id.FNListView);
@@ -41,6 +44,14 @@ public class FoodNutritionActivity extends AppCompatActivity {
             Log.i(ACTIVITY_NAME, "User clicked on search Food");
             Toast toast = Toast.makeText(getApplicationContext(), "Search button is pressed!", Toast.LENGTH_SHORT); // initiate the Toast with context, message and duration for the Toast
             toast.show();
+            String temp=mEditText.getText().toString();
+           if( temp.trim().isEmpty()){
+               //Dialog to show  user to enter text
+           }else{
+               Intent intent = new Intent(FoodNutritionActivity.this, FNSearchResult.class);
+               intent.putExtra("value",temp);
+               startActivity(intent);
+           }
             myProgressBar.setVisibility(View.VISIBLE);
 
             new Thread(new Runnable() {

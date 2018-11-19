@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gurki.cst2335_finalproject">
-<user-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,7 +22,8 @@
         <activity android:name=".MovieInformationActivity" />
         <activity android:name=".CBCNewsReaderActivity" />
         <activity android:name=".FoodNutritionActivity" />
-        <activity android:name=".FNSearchResult"></activity>
+        <activity android:name=".FNSearchResult" />
+        <activity android:name=".FNResult"></activity>
     </application>
 
 </manifest>
