@@ -68,9 +68,9 @@ public class FoodNutritionActivity extends AppCompatActivity {
         mGoBackButton.setOnClickListener((v) -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(FoodNutritionActivity.this);
 
-            builder.setMessage(R.string.dialog_message)
-                    .setTitle(R.string.dialog_title)
-                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            builder.setMessage(R.string.FNdialog_message)
+                    .setTitle(R.string.FNdialog_title)
+                    .setPositiveButton(R.string.FNok, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             Intent resultIntent = new Intent();
                             resultIntent.putExtra("Response", "Here is my response");
@@ -78,7 +78,7 @@ public class FoodNutritionActivity extends AppCompatActivity {
                             finish();
                         }
                     })
-                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    .setNegativeButton(R.string.FNcancel, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                         }
                     })
@@ -89,7 +89,7 @@ public class FoodNutritionActivity extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-                Intent intent = new Intent(FoodNutritionActivity.this, Page.class);
+                Intent intent = new Intent(FoodNutritionActivity.this, FNSearchResult.class);
                 startActivity(intent);
             }
 
