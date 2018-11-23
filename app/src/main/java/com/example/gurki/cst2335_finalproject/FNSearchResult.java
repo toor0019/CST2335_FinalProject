@@ -37,12 +37,12 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 public class FNSearchResult extends AppCompatActivity {
-    ProgressBar mProgressBar;
-    TextView name;
+    private ProgressBar mProgressBar;
+    private  TextView name;
     private TextView mCalories;
-    TextView protein;
-    TextView fat;
-    ImageView image;
+    private TextView mProtein;
+    private TextView mfat;
+    private ImageView image;
     private String query;
     private TextView mResult;
     protected static final String URL_STRING = "https://api.edamam.com/api/food-database/parser?app_id=e5bc806d&app_key=5f7521ffeefe491b936cea6271e13d3d&ingr=";
@@ -57,8 +57,8 @@ public class FNSearchResult extends AppCompatActivity {
         mProgressBar = (ProgressBar) findViewById(R.id.fnProgressBar);
         name = (TextView) findViewById(R.id.fnName);
         mCalories = (TextView) findViewById(R.id.fnCalories);
-        protein = (TextView) findViewById(R.id.fnProtein);
-        fat = (TextView) findViewById(R.id.fnFat);
+        mProtein = (TextView) findViewById(R.id.fnProtein);
+        mfat = (TextView) findViewById(R.id.fnFat);
         image = (ImageView) findViewById(R.id.fnCurrentFood);
         mProgressBar.setVisibility(View.VISIBLE);
         mResult=(TextView) findViewById(R.id.fnCalories);
@@ -73,10 +73,12 @@ public class FNSearchResult extends AppCompatActivity {
 
      class SearchQuery extends AsyncTask<String, String, String> {
         private String name;
-        private String calories;
-        private String protein;
-        private String fat;
-        private Bitmap image;
+        private double calories;
+        private double protein;
+        private double fat;
+        private Bitmap bitmap;
+        public String ImageURL;
+        HTTPUtils http = new HTTPUtils();
 
 
         @Override
@@ -97,16 +99,14 @@ public class FNSearchResult extends AppCompatActivity {
                     mProgressBar.setProgress(100);
                 }
 
-          /*String object = buffer.toString();
+          String object = buffer.toString();
                 JSONObject parentObject =new JSONObject(object);
                 JSONArray parentArray=parentObject.getJSONArray("parsed");
-                StringBuffer data=new StringBuffer();
-                for(int i=0; i<parentArray.length();i++){
-                    JSONObject finalObject=parentArray.getJSONObject(i);
-                    String name=finalObject.getString("categoryLabel");
-                    String category=finalObject.getString("category");
-                    data.append(name+" - "+category+"\n");
-                }*/
+                JSONObject firstFood = parentArray.getJSONObject(0);//first element
+                JSONObject food = firstFood.getJSONObject("food");
+                JSONObject nutrients = food.getJSONObject("nutrients");
+                 fat = nutrients.getDouble("FAT");
+                 calories = nutrients.getDouble("ENERC_KCAL");
 
                 //return data.toString();
 
@@ -119,9 +119,9 @@ public class FNSearchResult extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            //catch (JSONException e) {
-              //  e.printStackTrace();
-            //}
+            catch (JSONException e) {
+               e.printStackTrace();
+            }
             finally {
                 if (conn != null) {
                     conn.disconnect();
@@ -134,6 +134,22 @@ public class FNSearchResult extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+            ImageURL = URL_IMAGE + query;
+            FileOutputStream outputStream = null;
+            try {
+                bitmap = http.getImage(ImageURL);
+//                outputStream = openFileOutput();
+//            }
+//            catch (FileNotFoundException e) {
+//                e.printStackTrace();
+             }
+            bitmap.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
+            try {
+                outputStream.flush();
+                outputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             return null;
         }
 
@@ -141,6 +157,41 @@ public class FNSearchResult extends AppCompatActivity {
         protected void onPostExecute(String a) {
             super.onPostExecute(a);
             mResult.setText(a);
+            mCalories.setText("Calories : " + calories);
+            mfat.setText("Fat :"+ fat);
+            mProgressBar.setVisibility(View.INVISIBLE);
+            image.setImageBitmap(bitmap);
         }
+    }
+    public class HTTPUtils {
+        public Bitmap getImage(URL url) {
+            HttpURLConnection connection = null;
+            try {
+                connection = (HttpURLConnection) url.openConnection();
+                connection.connect();
+                int responseCode = connection.getResponseCode();
+                if (responseCode == 200) {
+                    return BitmapFactory.decodeStream(connection.getInputStream());
+                } else
+                    return null;
+            } catch (Exception e) {
+                return null;
+            } finally {
+                if (connection != null) {
+                    connection.disconnect();
+                }
+            }
+        }
+
+        public Bitmap getImage(String urlString) {
+            try {
+                URL url = new URL(urlString);
+                return getImage(url);
+            } catch (MalformedURLException e) {
+                return null;
+            }
+        }
+
+
     }
 }
