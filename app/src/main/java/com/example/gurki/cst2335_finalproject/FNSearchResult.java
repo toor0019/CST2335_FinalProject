@@ -134,22 +134,22 @@ public class FNSearchResult extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-            ImageURL = URL_IMAGE + query;
-            FileOutputStream outputStream = null;
-            try {
-                bitmap = http.getImage(ImageURL);
-//                outputStream = openFileOutput();
+//            ImageURL = URL_IMAGE + query;
+//            FileOutputStream outputStream = null;
+//            try {
+//                bitmap = http.getImage(ImageURL);
+////                outputStream = openFileOutput();
+////            }
+////            catch (FileNotFoundException e) {
+////                e.printStackTrace();
 //            }
-//            catch (FileNotFoundException e) {
+//            bitmap.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
+//            try {
+//                outputStream.flush();
+//                outputStream.close();
+//            } catch (IOException e) {
 //                e.printStackTrace();
-             }
-            bitmap.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
-            try {
-                outputStream.flush();
-                outputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            }
             return null;
         }
 
