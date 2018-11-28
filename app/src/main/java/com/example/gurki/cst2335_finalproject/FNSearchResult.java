@@ -1,6 +1,9 @@
 package com.example.gurki.cst2335_finalproject;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -45,6 +48,7 @@ public class FNSearchResult extends AppCompatActivity {
     private ImageView image;
     private String query;
     private TextView mResult;
+    private Button mGoBackButton;
     protected static final String URL_STRING = "https://api.edamam.com/api/food-database/parser?app_id=e5bc806d&app_key=5f7521ffeefe491b936cea6271e13d3d&ingr=";
     protected static final String URL_IMAGE = "https://spoonacular.com/cdn/ingredients_100x100/";
 
@@ -62,11 +66,37 @@ public class FNSearchResult extends AppCompatActivity {
         image = (ImageView) findViewById(R.id.fnCurrentFood);
         mProgressBar.setVisibility(View.VISIBLE);
         mResult=(TextView) findViewById(R.id.fnCalories);
+        mGoBackButton=(Button) findViewById(R.id.goBack);
         String searchField;
 //            Intent intent = new Intent(FNSearchResult.this, FNResult.class);
   //          Log.w("m","ptint");
             new SearchQuery().execute();
     //        startActivity(intent);
+
+
+
+        mGoBackButton = findViewById(R.id.goBack);
+        mGoBackButton.setOnClickListener((v) -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(FNSearchResult.this);
+
+            builder.setMessage(R.string.FNdialog_message)
+                    .setTitle(R.string.FNdialog_title)
+                    .setPositiveButton(R.string.FNok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Intent resultIntent = new Intent();
+                            resultIntent.putExtra("Response", "Here is my response");
+                            setResult(Activity.RESULT_OK, resultIntent);
+                            finish();
+                        }
+                    })
+                    .setNegativeButton(R.string.FNcancel, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                        }
+                    })
+                    .show();
+
+
+        });
 
         }
     //}
@@ -157,7 +187,7 @@ public class FNSearchResult extends AppCompatActivity {
         protected void onPostExecute(String a) {
             super.onPostExecute(a);
             mResult.setText(a);
-            mCalories.setText("Calories : " + calories);
+            mCalories.setText(query+"\nCalories : " + calories);
             mfat.setText("Fat :"+ fat);
             mProgressBar.setVisibility(View.INVISIBLE);
             image.setImageBitmap(bitmap);

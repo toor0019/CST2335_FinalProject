@@ -10,6 +10,8 @@
     <string name="FNdialog_title">Exit</string>
     <string name="FNok">yes</string>
     <string name="FNcancel">Cancel</string>
-    <string name="FNgoBack">Go back</string>
+    <string name="FNgoBack">Go back to Home</string>
+    <string name="fnfavouriteButton">Add to Favourites</string>
+    <string name="FNRefresh">Refresh History</string>
     <string name="FNPageText">A fruit on next page FINALLY!!!</string>
 </resources>

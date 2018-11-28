@@ -23,7 +23,8 @@
         <activity android:name=".CBCNewsReaderActivity" />
         <activity android:name=".FoodNutritionActivity" />
         <activity android:name=".FNSearchResult" />
-        <activity android:name=".FNResult"></activity>
+        <activity android:name=".FNResult" />
+        <activity android:name=".FNSplashScreen"></activity>
     </application>
 
 </manifest>

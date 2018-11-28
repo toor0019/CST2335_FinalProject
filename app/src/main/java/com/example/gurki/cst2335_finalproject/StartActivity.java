@@ -55,7 +55,7 @@ public class StartActivity extends AppCompatActivity {
         m_Food_Nutrition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StartActivity.this,FoodNutritionActivity.class);
+                Intent intent = new Intent(StartActivity.this,FNSplashScreen.class);
                 startActivity(intent);
             }
         });
