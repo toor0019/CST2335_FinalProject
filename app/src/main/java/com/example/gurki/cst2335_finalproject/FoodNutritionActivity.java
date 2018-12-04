@@ -6,9 +6,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,8 +29,45 @@ import java.util.ArrayList;
  * Purpose of this activity
  */
 public class FoodNutritionActivity extends AppCompatActivity {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.item1: Toast.makeText(this, "Item1 selected",Toast.LENGTH_SHORT).show();
+            FNIntroductionFragment item1=new FNIntroductionFragment();
+                FragmentManager fragmentManager=getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.fragmenttry,item1).commit();
 
 
+            return true;
+            case R.id.item2: Toast.makeText(this, "Item2 selected",Toast.LENGTH_SHORT).show();
+                FNDescriptionFragment item2=new FNDescriptionFragment();
+                FragmentManager fragmentManager2=getSupportFragmentManager();
+                fragmentManager2.beginTransaction().replace(R.id.fragmenttry,item2).commit();
+                return true;
+            case R.id.item3: Toast.makeText(this, "Item3 selected",Toast.LENGTH_SHORT).show();
+                FNInformationFragment item3=new FNInformationFragment();
+                FragmentManager fragmentManager3=getSupportFragmentManager();
+                fragmentManager3.beginTransaction().replace(R.id.fragmenttry,item3).commit();
+                return true;
+            case R.id.item4:  Toast.makeText(this, "Item4 selected",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FoodNutritionActivity.this, FoodNutritionActivity.class);
+                startActivity(intent);
+                return true;
+            default: return super.onOptionsItemSelected(item);
+
+
+        }
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.drawermenu,menu);
+
+        return true;
+    }
 
     private static String ACTIVITY_NAME = "FoodNutritionStart";
     private Button mSearchButton, mGoBackButton,mRefresh;
@@ -40,6 +81,8 @@ public class FoodNutritionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_nutrition);
         Log.i(ACTIVITY_NAME, "In onCreate()");
+        android.support.v7.widget.Toolbar myToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
         myProgressBar = (ProgressBar) findViewById(R.id.ourProgressBar);
         mSearchButton = findViewById(R.id.FNsearchButton);
         mEditText=(EditText) findViewById(R.id.FNsearchEditText);
