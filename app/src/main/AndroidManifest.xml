@@ -24,7 +24,11 @@
         <activity android:name=".FoodNutritionActivity" />
         <activity android:name=".FNSearchResult" />
         <activity android:name=".FNResult" />
-        <activity android:name=".FNSplashScreen"></activity>
+        <activity android:name=".FNSplashScreen" />
+        <activity
+            android:name=".example"
+            android:label="@string/title_activity_example"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
