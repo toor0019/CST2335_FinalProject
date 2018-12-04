@@ -12,4 +12,9 @@
     <string name="cancel">Cancel</string>
     <string name="FNgoBack">Go back</string>
     <string name="FNPageText">A fruit on next page FINALLY!!!</string>
+    <string name="OC_App_Name">MY OC</string>
+    <string name="OC_start">Starting</string>
+    <string name="OC_Search_Route">Enter the Stop</string>
+    <string name="OC_Search_Stop">Enter the Bus Number</string>
+    <string name="OC_Search_Button">Search</string>
 </resources>
