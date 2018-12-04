@@ -16,14 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OC_Transpo.OCTranspoActivity" />
+        <activity android:name=".OCTranspoActivity" />
         <activity android:name=".MovieInformationActivity" />
         <activity android:name=".CBCNewsReaderActivity" />
         <activity android:name=".FoodNutritionActivity" />
-        <activity android:name=".Page" />
-        <activity android:name=".OC_Transpo.databse.MainActivity" />
-        <activity android:name=".OC_Transpo.SearchActivity" />
-        <activity android:name=".OC_Transpo.LoadActivity"></activity>
+        <activity android:name=".Page"></activity>
     </application>
 
 </manifest>
