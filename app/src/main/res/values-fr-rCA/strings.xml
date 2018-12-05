@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">CST2335_FinalProject</string>
+    <string name="oc_transpo">OC Transpo Bus Route</string>
+
+    <!--CBC News-->
+    <string name="cbc_Search">Recherche</string>
+    <string name="cbc_news">CBC Lecteur de Nouvelles</string>
+    <string name="cbc_searchErrorMessage">Le champ de recherche ne peut pas être vide</string>
+    <string name="cbc_searchErrorTitle">Erreur</string>
+    <string name="cbc_searchErrorClosed">Boîte fermé</string>
+    <string name="cbc_searchErrorOk">Ok</string>
+    <string name="cbc_snackBarMessage">Vous-êtes sur nouvelles CBC</string>
+    <!--CBC News-->
+
+    <string name="food_nutrition">Food Nutrition Database</string>
+    <string name="movie_information">Movie Information</string>
+    <string name="FNSearch"> Search Food</string>
+    <string name="FNInputText">Type to search food</string>
+    <string name="FNdialog_message">Are you sure?</string>
+    <string name="FNdialog_title">Exit</string>
+    <string name="FNok">yes</string>
+    <string name="FNcancel">Cancel</string>
+    <string name="FNgoBack">Go back to Home</string>
+    <string name="fnfavouriteButton">Add to Favourites</string>
+    <string name="FNRefresh">Refresh History</string>
+    <string name="FNPageText">A fruit on next page FINALLY!!!</string>
+    <string name="OC_App_Name">MY OC</string>
+    <string name="OC_start">Starting</string>
+    <string name="OC_Search_Route">Enter the Stop</string>
+    <string name="OC_Search_Stop">Enter the Bus Number</string>
+    <string name="OC_Search_Button">Search</string>
+</resources>
