@@ -3,9 +3,9 @@
     <string name="oc_transpo">OC Transpo Bus Route</string>
 
     <!--CBC News-->
-    <string name="cbc_Search">Recherche</string>
+    <string name="cbc_search">Recherche</string>
     <string name="cbc_news">CBC Lecteur de Nouvelles</string>
-    <string name="cbc_searchErrorMessage">Le champ de recherche ne peut pas être vide</string>
+    <string name="cbc_searchErrorMessage">Aucun résultat trouvé</string>
     <string name="cbc_searchErrorTitle">Erreur</string>
     <string name="cbc_searchErrorClosed">Boîte fermé</string>
     <string name="cbc_searchErrorOk">Ok</string>
