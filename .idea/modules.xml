@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/CST2335_FinalProject.iml" filepath="$PROJECT_DIR$/.idea/CST2335_FinalProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/CST2335_FinalProject.iml" filepath="$PROJECT_DIR$/CST2335_FinalProject.iml" />
-      <module fileurl="file://C:\Users\gurki\Downloads\AndroidProgramming3e\08_RecyclerView\CST2335_FinalProject\.idea\CST2335_FinalProject.iml" filepath="C:\Users\gurki\Downloads\AndroidProgramming3e\08_RecyclerView\CST2335_FinalProject\.idea\CST2335_FinalProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../gurki/Downloads/AndroidProgramming3e/08_RecyclerView/CST2335_FinalProject/.idea/CST2335_FinalProject.iml" filepath="$PROJECT_DIR$/../../gurki/Downloads/AndroidProgramming3e/08_RecyclerView/CST2335_FinalProject/.idea/CST2335_FinalProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
