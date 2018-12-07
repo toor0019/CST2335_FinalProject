@@ -32,23 +32,23 @@ public class FoodNutritionActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
-            case R.id.item1: Toast.makeText(this, "Item1 selected",Toast.LENGTH_SHORT).show();
-            FNIntroductionFragment item1=new FNIntroductionFragment();
-                FragmentManager fragmentManager=getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.fragmenttry,item1).commit();
-
-
-            return true;
+//            case R.id.item1: Toast.makeText(this, "Item1 selected",Toast.LENGTH_SHORT).show();
+//            FNIntroductionFragment item1=new FNIntroductionFragment();
+//                FragmentManager fragmentManager=getSupportFragmentManager();
+//                fragmentManager.beginTransaction().replace(R.id.fragmenttry,item1).commit();
+//
+//
+//            return true;
             case R.id.item2: Toast.makeText(this, "Item2 selected",Toast.LENGTH_SHORT).show();
                 FNDescriptionFragment item2=new FNDescriptionFragment();
                 FragmentManager fragmentManager2=getSupportFragmentManager();
                 fragmentManager2.beginTransaction().replace(R.id.fragmenttry,item2).commit();
                 return true;
-            case R.id.item3: Toast.makeText(this, "Item3 selected",Toast.LENGTH_SHORT).show();
-                FNInformationFragment item3=new FNInformationFragment();
-                FragmentManager fragmentManager3=getSupportFragmentManager();
-                fragmentManager3.beginTransaction().replace(R.id.fragmenttry,item3).commit();
-                return true;
+//            case R.id.item3: Toast.makeText(this, "Item3 selected",Toast.LENGTH_SHORT).show();
+//                FNInformationFragment item3=new FNInformationFragment();
+//                FragmentManager fragmentManager3=getSupportFragmentManager();
+//                fragmentManager3.beginTransaction().replace(R.id.fragmenttry,item3).commit();
+//                return true;
             case R.id.item4:  Toast.makeText(this, "Item4 selected",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(FoodNutritionActivity.this, FoodNutritionActivity.class);
                 startActivity(intent);
@@ -70,7 +70,7 @@ public class FoodNutritionActivity extends AppCompatActivity {
     }
 
     private static String ACTIVITY_NAME = "FoodNutritionStart";
-    private Button mSearchButton, mGoBackButton,mRefresh;
+    private Button mSearchButton, mGoBackButton;
     ProgressBar myProgressBar,fnProgress;
     ListView mListView;
     private EditText mEditText;
@@ -88,7 +88,7 @@ public class FoodNutritionActivity extends AppCompatActivity {
         mEditText=(EditText) findViewById(R.id.FNsearchEditText);
         myDB=new FNDatabaseHelper(this);
         mListView = (ListView) findViewById(R.id.FNListView);
-        mRefresh=(Button) findViewById(R.id.FNRefresh);
+
         fnProgress=findViewById(R.id.fnProgressBar);
 
         ArrayList<String> history=new ArrayList<>();
@@ -129,26 +129,6 @@ public class FoodNutritionActivity extends AppCompatActivity {
                startActivity(intent);
            }
             myProgressBar.setVisibility(View.VISIBLE);
-
-//            new Thread(new Runnable() {
-//
-//                @Override
-//                public void run() {
-//                    int i = 0;
-//                    while (i != 100) {
-//                        myProgressBar.setProgress(i);
-//                        i++;
-//                        try {
-//                            Thread.sleep(10);
-//                        } catch (InterruptedException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//
-//                }
-//            }).start();
-
-
             Snackbar.make(mSearchButton, "Search button is pressed", Snackbar.LENGTH_LONG).show();
         });
         mGoBackButton = findViewById(R.id.FNgoBackButton);
@@ -172,12 +152,6 @@ public class FoodNutritionActivity extends AppCompatActivity {
                     .show();
 
 
-        });
-        mRefresh=findViewById(R.id.FNRefresh);
-        mRefresh.setOnClickListener((v)->{
-            Intent intent = getIntent();
-            finish();
-            startActivity(intent);
         });
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

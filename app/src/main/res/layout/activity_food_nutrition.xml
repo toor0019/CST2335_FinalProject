@@ -55,13 +55,8 @@
         android:id="@+id/FNgoBackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:text="@string/FNgoBack" />
-    <Button
-        android:id="@+id/FNRefresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/FNRefresh" />
-
     <ListView
         android:id="@+id/FNListView"
         android:layout_width="wrap_content"

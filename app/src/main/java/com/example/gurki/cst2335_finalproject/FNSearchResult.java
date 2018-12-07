@@ -23,6 +23,7 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -45,7 +46,9 @@ public class FNSearchResult extends AppCompatActivity {
     private TextView mCalories;
     private TextView mProtein;
     private TextView mfat;
-    private ImageView image;
+    private TextView mCarbohydrates;
+    private TextView mFibre;
+    private TextView mCurrentFood;
     private String query;
     private TextView mResult;
     private Button mGoBackButton;
@@ -63,9 +66,13 @@ public class FNSearchResult extends AppCompatActivity {
         mCalories = (TextView) findViewById(R.id.fnCalories);
         mProtein = (TextView) findViewById(R.id.fnProtein);
         mfat = (TextView) findViewById(R.id.fnFat);
-        image = (ImageView) findViewById(R.id.fnCurrentFood);
+        mCarbohydrates=(TextView) findViewById(R.id.fnCarbohydrates);
+        mFibre=(TextView)findViewById(R.id.fnFibre);
+        mCurrentFood=(TextView) findViewById(R.id.fnCurrentFood);
         mProgressBar.setVisibility(View.VISIBLE);
         mResult=(TextView) findViewById(R.id.fnCalories);
+
+
         mGoBackButton=(Button) findViewById(R.id.goBack);
         String searchField;
 //            Intent intent = new Intent(FNSearchResult.this, FNResult.class);
@@ -106,6 +113,8 @@ public class FNSearchResult extends AppCompatActivity {
         private double calories;
         private double protein;
         private double fat;
+         private double carbohydrates;
+         private double fibre;
         private Bitmap bitmap;
         public String ImageURL;
         HTTPUtils http = new HTTPUtils();
@@ -137,9 +146,9 @@ public class FNSearchResult extends AppCompatActivity {
                 JSONObject nutrients = food.getJSONObject("nutrients");
                  fat = nutrients.getDouble("FAT");
                  calories = nutrients.getDouble("ENERC_KCAL");
-
-                //return data.toString();
-
+                 protein=nutrients.getDouble("PROCNT");
+                 carbohydrates=nutrients.getDouble("CHOCDF");
+                 fibre=nutrients.getDouble("FIBTG");
             return buffer.toString();
 
 
@@ -164,22 +173,7 @@ public class FNSearchResult extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-//            ImageURL = URL_IMAGE + query;
-//            FileOutputStream outputStream = null;
-//            try {
-//                bitmap = http.getImage(ImageURL);
-////                outputStream = openFileOutput();
-////            }
-////            catch (FileNotFoundException e) {
-////                e.printStackTrace();
-//            }
-//            bitmap.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
-//            try {
-//                outputStream.flush();
-//                outputStream.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
+
             return null;
         }
 
@@ -187,10 +181,14 @@ public class FNSearchResult extends AppCompatActivity {
         protected void onPostExecute(String a) {
             super.onPostExecute(a);
             mResult.setText(a);
-            mCalories.setText(query+"\nCalories : " + calories);
+            mCurrentFood.setText(query);
+            mCalories.setText("\nCalories : " + calories);
             mfat.setText("Fat :"+ fat);
+            mProtein.setText("Protein :"+protein);
+            mCarbohydrates.setText("Carbohydrates :"+ carbohydrates);
+            mFibre.setText("Fibre :"+ fibre);
             mProgressBar.setVisibility(View.INVISIBLE);
-            image.setImageBitmap(bitmap);
+
         }
     }
     public class HTTPUtils {

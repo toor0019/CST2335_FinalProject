@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CST2335_FinalProject</string>
-    <string name="oc_transpo">OC Transpo Bus Route</string>
-    <string name="cbc_news">CBC News Reader</string>
-    <string name="food_nutrition">Food Nutrition Database</string>
+    <string name="oc_transpo">ओसी ट्रांसपो बस मार्ग</string>
+    <string name="cbc_news">सीबीसी समाचार पाठक</string>
+    <string name="food_nutrition">खाद्य पोषण डेटाबेस</string>
     <string name="movie_information">Movie Information</string>
     <string name="FNSearch"> Search Food</string>
-    <string name="FNInputText">Type to search food</string>
-    <string name="FNdialog_message">Are you sure?</string>
+    <string name="FNInputText">भोजन खोजें</string>
+    <string name="FNdialog_message">क्या आपको यकीन है?</string>
     <string name="FNdialog_title">Exit</string>
-    <string name="FNok">yes</string>
+    <string name="FNok">हाँ</string>
     <string name="FNcancel">Cancel</string>
     <string name="FNgoBack">Go back to Home</string>
     <string name="fnfavouriteButton">Add to Favourites</string>

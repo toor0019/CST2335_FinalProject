@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fncolor"
+    android:background="@color/white"
     tools:context=".FNSplashScreen">
 
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="446dp"
         android:layout_height="match_parent"
-        android:src="@drawable/fnp"
-        />
+        android:src="@drawable/fnpicture2" />
 </LinearLayout>
