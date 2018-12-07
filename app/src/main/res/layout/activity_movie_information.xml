@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.gurki.cst2335_finalproject.MovieInformationActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Movie Information"
+        android:textStyle="bold"
+        android:textSize="50dp"
+        android:gravity="center"/>
+
 </android.support.constraint.ConstraintLayout>

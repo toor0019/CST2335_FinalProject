@@ -2,22 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<!--<item android:id="@+id/item1"-->
-    <!--android:title="Introduction"-->
-    <!--android:icon="@drawable/fnintroduction"-->
-    <!--app:showAsAction="never">-->
-
-<!--</item>-->
+<item android:id="@+id/busitem"
+    android:title="Introduction"
+    android:icon="@drawable/ocbus"
+    app:showAsAction="always">
+</item>
     <item android:id="@+id/item2"
-        android:title="Description"
+        android:title="About"
         android:icon="@drawable/fndescription"
         app:showAsAction="never"></item>
-    <!--<item android:id="@+id/item3"-->
-        <!--android:title="About"-->
-        <!--android:icon="@drawable/fninformation"-->
-        <!--app:showAsAction="never"></item>-->
+    <item android:id="@+id/cbcitem"
+        android:title="About"
+        android:icon="@drawable/news"
+        app:showAsAction="always"></item>
     <item android:id="@+id/item4"
         android:title="Refresh History"
         android:icon="@drawable/fnspare"
         app:showAsAction="never"></item>
+    <item android:id="@+id/movieitem"
+        android:title="Refresh History"
+        android:icon="@drawable/movie"
+        app:showAsAction="always"></item>
+    <item android:id="@+id/fooditem"
+        android:title="Refresh History"
+        android:icon="@drawable/fnnavigation"
+        app:showAsAction="always"></item>
 </menu>

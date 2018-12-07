@@ -32,26 +32,32 @@ public class FoodNutritionActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
-//            case R.id.item1: Toast.makeText(this, "Item1 selected",Toast.LENGTH_SHORT).show();
-//            FNIntroductionFragment item1=new FNIntroductionFragment();
-//                FragmentManager fragmentManager=getSupportFragmentManager();
-//                fragmentManager.beginTransaction().replace(R.id.fragmenttry,item1).commit();
-//
-//
-//            return true;
+            case R.id.cbcitem: Toast.makeText(this, "Opening CBC News Reader",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FoodNutritionActivity.this, CBCNewsReaderActivity.class);
+                startActivity(intent);
+            return true;
+            case R.id.movieitem: Toast.makeText(this, "Opening Movie Information",Toast.LENGTH_SHORT).show();
+                Intent intent4 = new Intent(FoodNutritionActivity.this, MovieInformationActivity.class);
+                startActivity(intent4);
+                return true;
+
+            case R.id.fooditem: Toast.makeText(this, "Opening Food Nutrition",Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(FoodNutritionActivity.this, FoodNutritionActivity.class);
+                startActivity(intent1);
+                return true;
+
             case R.id.item2: Toast.makeText(this, "Item2 selected",Toast.LENGTH_SHORT).show();
                 FNDescriptionFragment item2=new FNDescriptionFragment();
                 FragmentManager fragmentManager2=getSupportFragmentManager();
                 fragmentManager2.beginTransaction().replace(R.id.fragmenttry,item2).commit();
                 return true;
-//            case R.id.item3: Toast.makeText(this, "Item3 selected",Toast.LENGTH_SHORT).show();
-//                FNInformationFragment item3=new FNInformationFragment();
-//                FragmentManager fragmentManager3=getSupportFragmentManager();
-//                fragmentManager3.beginTransaction().replace(R.id.fragmenttry,item3).commit();
-//                return true;
-            case R.id.item4:  Toast.makeText(this, "Item4 selected",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(FoodNutritionActivity.this, FoodNutritionActivity.class);
-                startActivity(intent);
+            case R.id.busitem: Toast.makeText(this, "Opening OC-Transpo",Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent(FoodNutritionActivity.this, OCTranspoActivity.class);
+                startActivity(intent2);
+                return true;
+            case R.id.item4:  Toast.makeText(this, "Refreshing",Toast.LENGTH_SHORT).show();
+                Intent intent3 = new Intent(FoodNutritionActivity.this, FoodNutritionActivity.class);
+                startActivity(intent3);
                 return true;
             default: return super.onOptionsItemSelected(item);
 
