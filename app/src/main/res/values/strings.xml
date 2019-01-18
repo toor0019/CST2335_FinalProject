@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">CST2335_FinalProject</string>
     <string name="oc_transpo">OC Transpo Bus Route</string>
+
+    <!--CBC News-->
+    <string name="cbc_search">Search</string>
     <string name="cbc_news">CBC News Reader</string>
+    <string name="cbc_searchErrorMessage">No Search Results found</string>
+    <string name="cbc_searchErrorTitle">Error</string>
+    <string name="cbc_searchErrorClosed">Dialog box Closed</string>
+    <string name="cbc_searchErrorOk">Ok</string>
+    <string name="cbc_snackBarMessage">You are on CBC News</string>
+    <!--CBC News-->
+
     <string name="food_nutrition">Food Nutrition Database</string>
     <string name="movie_information">Movie Information</string>
     <string name="FNSearch"> Search Food</string>
