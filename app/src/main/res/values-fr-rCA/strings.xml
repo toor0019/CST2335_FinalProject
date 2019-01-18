@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CST2335_FinalProject</string>
+    <string name="app_name">CST2335_FinalProject-French</string>
     <string name="oc_transpo">OC Transpo Bus Route</string>
     <string name="cbc_news">CBC News Reader</string>
     <string name="food_nutrition">Food Nutrition Database</string>
@@ -14,7 +15,7 @@
     <string name="fnfavouriteButton">Add to Favourites</string>
     <string name="FNRefresh">Refresh History</string>
     <string name="FNPageText">A fruit on next page FINALLY!!!</string>
-    <string name="OC_App_Name">"MY OC"</string>
+    <string name="OC_App_Name">MY OC</string>
     <string name="OC_start">Starting</string>
     <string name="OC_Search_Route">Enter the Stop</string>
     <string name="OC_Search_Stop">Enter the Bus Number</string>

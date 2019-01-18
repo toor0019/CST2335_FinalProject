@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.gurki.cst2335_finalproject.OC_Transpo.OCTranspoActivity">
-
+    tools:context="com.example.gurki.cst2335_finalproject.OCTranspoActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/OC_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -16,18 +24,12 @@
         android:textSize="12mm"
         android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/OC_start"
-        android:textAlignment="center"
-        android:textSize="6mm" />
 
-    <ProgressBar
-        style="?android:attr/progressBarStyle"
+
+    <Button
+        android:text="@string/OC_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:id="@+id/start_progressBar"
+        android:id="@+id/start_Button"
       />
 </LinearLayout>

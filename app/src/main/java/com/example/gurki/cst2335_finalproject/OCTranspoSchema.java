@@ -1,4 +1,4 @@
-package com.example.gurki.cst2335_finalproject.OC_Transpo.databse;
+package com.example.gurki.cst2335_finalproject;
 
 /**
  * Created by gurki on 2018-11-19.
@@ -12,6 +12,7 @@ public class OCTranspoSchema {
         public static final class Cols {
             public static final String STOP_NUMBER="stopNumber";
             public static final String RouteID="routeID";
+            public static final String RouteName="routeName";
         }
     }
 
